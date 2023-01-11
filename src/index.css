@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .flex-middle {
+    @apply flex items-center justify-center;
+  }
+  .flex-diverge {
+    @apply flex items-center justify-between;
+  }
+  .nav-link {
+    @apply font-semibold flex-middle gap-2 text-gray-900 duration-300 hover:bg-emerald-600 hover:text-white  py-2 px-4;
+  }
+  .btn {
+    @apply bg-gray-100 text-gray-900 font-semibold  tracking-wider py-2 px-4 hover:bg-gray-900 hover:text-emerald-400 duration-300;
+  }
+
+  .nav-menu {
+    @apply flex-middle md:absolute md:top-[55px] md:left-0 md:bg-white md:h-[65vh] md:flex-col md:w-full duration-500;
+  }
+  .Navbar {
+    @apply flex-diverge shadow-lg z-30 fixed w-[95%] my-5 px-10 bg-white rounded-lg py-4 left-2/4 transform -translate-x-2/4;
+  }
+  .Title {
+    @apply text-5xl font-semibold mb-4 text-gray-800;
+  }
+  .SubTitle {
+    @apply text-xl text-gray-700 relative;
+  }
+
+  .Min-Title {
+    @apply text-4xl mb-4 text-gray-700 tracking-wide;
+  }
+  .Min-Desc {
+    @apply mb-4 text-gray-600;
+  }
+  .Picture {
+    @apply w-full h-96 object-cover rounded-xl shadow-sm;
+  }
+  .PicAbove {
+    @apply transform -translate-y-12;
+  }
+  .Section {
+    @apply p-20 lg:px-10;
+  }
+  .social-icon {
+    @apply text-3xl text-gray-300 hover:text-emerald-600 duration-300
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.SubTitle::after {
+  content: "";
+  width: 20%;
+  bottom: -12px;
+  left: 50%;
+  background: #009688;
+  height: 5px;
+  position: absolute;
+  transform: translateX(-50%);
+  border-radius: 50px;
+}
+.destiny:nth-child(2n + 1) .destiny-img .Picture:nth-child(2) {
+  transform: none;
+}
+.destiny:nth-child(2n + 1) .destiny-img .Picture:nth-child(1) {
+  transform: translateY(-3rem);
+}
+
+.bottom div:hover h3 {
+  transform: rotate(10deg);
+}
+
+@media (min-width: 1024px) {
+  .destiny:nth-child(2n + 2) {
+    flex-direction: row-reverse;
+  }
+  .destiny:nth-child(2n + 2) .destiny-info {
+    text-align: right;
+  }
+}
+@media (max-width: 1024px) {
+  .destiny:nth-child(2n + 2) .destiny-info {
+    text-align: right;
+  }
+}
